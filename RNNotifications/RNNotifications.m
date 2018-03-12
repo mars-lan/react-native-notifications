@@ -220,6 +220,16 @@ RCT_EXPORT_MODULE()
     [RNNotificationsBridgeQueue sharedInstance].openedLocalNotification = localNotification ? localNotification.userInfo : nil;
 }
 
+- (dispatch_queue_t)methodQueue
+{
+    return dispatch_get_main_queue();
+}
+
++ (BOOL)requiresMainQueueSetup
+{
+    return YES;
+}
+
 /*
  * Public Methods
  */
